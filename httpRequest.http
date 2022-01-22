@@ -1,0 +1,33 @@
+POST HTTP://localhost:3000/product/create
+Content-Type: application/json
+
+{
+    "name":"Gaming Mouse",
+    "description":"Mouse product",
+    "imageURL":"lslslsos",
+    "price":4555
+}
+
+###
+
+GET  HTTP://localhost:3000/product/
+
+###
+
+
+GET  HTTP://localhost:3000/product/61eb828acf57b34c7148e553
+
+###
+DELETE http://localhost:3000/product/delete?productID=61eb828acf57b34c7148e553
+
+###
+PUT http://localhost:3000/product/update?productID=61eb87a2a32010d07bf3a77b
+Content-Type: application/json
+
+{
+    "name":"Gaming Monitor update",
+    "description":"Gamming description",
+    "imageURL":"lslsllslslsls",
+    "price":888
+
+}
