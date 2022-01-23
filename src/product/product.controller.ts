@@ -1,14 +1,15 @@
 import { Controller,Get,Post,Put,Delete, Res ,HttpStatus,Body, Param, NotFoundException, Query} from '@nestjs/common';
+import { ApiExtraModels } from '@nestjs/swagger';
 import {CreateProductDTO} from './dto/product.dto';
 import {ProductService} from './product.service';
 @Controller('product')
+@ApiExtraModels(CreateProductDTO)
 export class ProductController {
     constructor(private productService:ProductService){}
 
 
     @Post('/create')
     async createPost(@Res() res,@Body() createProductDTO: CreateProductDTO){
-       // console.log(createProductDTO);
        const product = await this.productService.createProduct(createProductDTO);
         return res.status(HttpStatus.OK).json({
             message:'Product Succesfully Created',
